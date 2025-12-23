@@ -3,56 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <title>Crown Retail Group | Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Crown Retail Group – a leading chain of large supermarkets. Our new website is coming soon." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --navy: #0d1b2a;
+      --gold: #c9a24d;
+      --grey: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #ffffff;
-      color: #1a1a1a;
+      color: var(--navy);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
     }
+
     .container {
       text-align: center;
-      max-width: 600px;
       padding: 40px;
+      max-width: 600px;
     }
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    h2 {
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 3px;
-      color: #777;
-      margin-bottom: 40px;
-    }
-    p {
-      font-size: 18px;
-      color: #444;
+
+    .logo {
+      max-width: 160px;
       margin-bottom: 30px;
     }
-    .footer {
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin: 10px 0;
+      letter-spacing: 1px;
+    }
+
+    h2 {
       font-size: 14px;
-      color: #999;
-      margin-top: 40px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--grey);
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      font-size: 13px;
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>CROWN</h1>
-    <h2>RETAIL GROUP</h2>
-    <p>Our new website is coming soon.<br>
-       We’re building something exceptional.</p>
-    <div class="footer">
-      © 2025 Crown Retail Group
-    </div>
+
+    <!-- LOGO -->
+    <img src="logo.png" alt="Crown Retail Group Logo" class="logo" />
+
+    <h1>Crown Retail Group</h1>
+    <h2>COMING SOON</h2>
+
+    <div class="divider"></div>
+
+    <p>
+      We are a growing chain of large supermarkets,  
+      committed to quality, value, and exceptional customer experience.
+      <br><br>
+      Our new website is launching soon.
+    </p>
+
+    <footer>
+      © 2025 Crown Retail Group. All rights reserved.
+    </footer>
+
   </div>
 </body>
 </html>
