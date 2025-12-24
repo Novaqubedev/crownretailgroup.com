@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Crown Retail Group | Coming Soon</title>
 
-  <meta name="description" content="Crown Retail Group – Grocery Shopping Made Easy" />
+  <meta name="description" content="Crown Retail Group – a growing business, committed to quality, value, and exceptional customer experience." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Favicon -->
@@ -16,113 +16,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --navy: #0b1c2d;
-      --gold: #c9a24d;
-      --text: #111827;
+    :root{
+      --navy:#0b1c2d;
+      --gold:#c9a24d;
+      --text:#111827;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --border:#eef2f7;
+      --shadow:rgba(11, 28, 45, 0.10);
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-
-      /* BACKGROUND IMAGE */
-      background: url("bg.png") center/cover no-repeat fixed;
-      position: relative;
+    html, body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      background:#ffffff;
+      color:var(--text);
     }
 
-    /* Dark premium overlay for readability */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        rgba(11, 28, 45, 0.78),
-        rgba(11, 28, 45, 0.55)
-      );
+    /* subtle premium top glow (no image) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:-40vh -20vw auto -20vw;
+      height:60vh;
+      background:
+        radial-gradient(closest-side, rgba(201,162,77,0.18), transparent 70%),
+        radial-gradient(closest-side, rgba(11,28,45,0.08), transparent 70%);
+      pointer-events:none;
+      filter: blur(10px);
     }
 
-    /* Subtle blur card */
-    .card {
-      position: relative; /* keeps it above overlay */
-      width: min(680px, 92vw);
-      padding: 42px 36px;
-      border-radius: 18px;
-      text-align: center;
-      margin: 0 auto;
-
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+    .page{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:42px 18px;
+      position:relative;
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px 16px;
-      position: relative; /* above overlay */
+    .card{
+      width:min(820px, 94vw);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:44px 34px 34px;
+      box-shadow: 0 24px 60px var(--shadow);
+      text-align:center;
     }
 
-    .logo {
-      width: min(240px, 70vw);
-      height: auto;
-      margin-bottom: 26px;
+    /* logo badge prevents ugly white-canvas feel */
+    .logo-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 18px;
+      border-radius:18px;
+      background:#ffffff;
+      border:1px solid rgba(11,28,45,0.08);
+      box-shadow: 0 10px 26px rgba(11,28,45,0.08);
+      margin-bottom:22px;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px;
-      margin: 0;
-      color: var(--navy);
-      letter-spacing: 0.5px;
+    .logo{
+      height:56px;
+      width:auto;
+      display:block;
+      object-fit:contain;
     }
 
-    .tag {
-      margin-top: 10px;
+    h1{
+      font-family:"Playfair Display", serif;
+      font-weight:600;
+      font-size: clamp(34px, 4.2vw, 54px);
+      margin: 8px 0 10px;
+      color:var(--navy);
+      letter-spacing: 0.4px;
+    }
+
+    .coming{
+      display:inline-block;
+      margin-top:6px;
       font-size: 13px;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       font-weight: 500;
       color: var(--gold);
     }
 
-    .divider {
-      width: 74px;
-      height: 2px;
+    .divider{
+      width:92px;
+      height:2px;
       background: var(--gold);
-      margin: 28px auto;
-      border-radius: 20px;
+      margin: 28px auto 22px;
+      border-radius:999px;
     }
 
-    p {
-      margin: 0 auto 34px;
-      max-width: 46ch;
+    p{
+      max-width: 58ch;
+      margin: 0 auto 28px;
       font-size: 18px;
-      line-height: 1.65;
-      color: rgba(17, 24, 39, 0.78);
+      line-height: 1.7;
+      color: var(--muted);
     }
 
-    footer {
+    footer{
+      margin-top: 6px;
       font-size: 13px;
-      color: rgba(17, 24, 39, 0.55);
+      color: rgba(107,114,128,0.9);
+    }
+
+    @media (max-width: 520px){
+      .card{ padding:34px 20px 22px; border-radius:20px; }
+      .logo{ height:46px; }
+      .coming{ letter-spacing:5px; }
+      p{ font-size: 16.5px; }
     }
   </style>
 </head>
+
 <body>
-  <main class="wrap">
+  <main class="page">
     <section class="card">
 
-      <img src="logo.png" alt="Crown Retail Group Logo" class="logo" />
+      <!-- Logo -->
+      <div class="logo-badge">
+        <img src="logo.png" alt="Crown Retail Group Logo" class="logo">
+      </div>
 
       <h1>Crown Retail Group</h1>
-      <div class="tag">COMING SOON</div>
+      <div class="coming">COMING SOON</div>
 
       <div class="divider"></div>
 
@@ -130,7 +155,9 @@
         We are a growing business, committed to quality, value, and exceptional customer experience.
       </p>
 
-      <footer>© 2025 Crown Retail Group. All rights reserved.</footer>
+      <footer>
+        © 2025 Crown Retail Group. All rights reserved.
+      </footer>
 
     </section>
   </main>
