@@ -3,56 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <title>Crown Retail Group | Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Crown Retail Group – a growing business, committed to quality, value, and exceptional customer experience." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #ffffff;
-      color: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    :root{
+      --navy:#0b1c2d;
+      --gold:#c9a24d;
+      --muted:#667085;
+      --border:#eef2f7;
+      --shadow:rgba(11, 28, 45, 0.10);
     }
-    .container {
-      text-align: center;
-      max-width: 600px;
-      padding: 40px;
+
+    *{ box-sizing:border-box; }
+
+    html, body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      background:#ffffff;
+      color:var(--navy);
     }
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
+
+    /* subtle premium glow */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:-40vh -20vw auto -20vw;
+      height:60vh;
+      background:
+        radial-gradient(closest-side, rgba(201,162,77,0.16), transparent 70%),
+        radial-gradient(closest-side, rgba(11,28,45,0.06), transparent 70%);
+      pointer-events:none;
+      filter: blur(14px);
     }
-    h2 {
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 3px;
-      color: #777;
-      margin-bottom: 40px;
+
+    .page{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:42px 18px;
     }
-    p {
+
+    .card{
+      width:min(860px, 94vw);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:52px 34px 38px;
+      box-shadow: 0 24px 60px var(--shadow);
+      text-align:center;
+    }
+
+    .logo{
+      display:block;
+      margin:0 auto 26px;
+      width:min(320px, 76vw);
+      height:auto;
+    }
+
+    h1{
+      font-family:"Playfair Display", serif;
+      font-weight:600;
+      font-size: clamp(34px, 4.2vw, 56px);
+      margin: 0 0 12px;
+      letter-spacing: 0.4px;
+      color:var(--navy);
+    }
+
+    .coming{
+      display:inline-block;
+      font-size: 13px;
+      letter-spacing: 6px;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .divider{
+      width:92px;
+      height:2px;
+      background: var(--gold);
+      margin: 0 auto 22px;
+      border-radius:999px;
+    }
+
+    p{
+      max-width: 60ch;
+      margin: 0 auto 28px;
       font-size: 18px;
-      color: #444;
-      margin-bottom: 30px;
+      line-height: 1.7;
+      color: var(--muted);
     }
-    .footer {
-      font-size: 14px;
-      color: #999;
-      margin-top: 40px;
+
+    footer{
+      font-size: 13px;
+      color: rgba(102,112,133,0.95);
+    }
+
+    @media (max-width: 640px){
+      .card{ padding:40px 20px 26px; border-radius:20px; }
+      .coming{ letter-spacing:5px; }
+      p{ font-size: 16.5px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>CROWN</h1>
-    <h2>RETAIL GROUP</h2>
-    <p>Our new website is coming soon.<br>
-       We’re building something exceptional.</p>
-    <div class="footer">
-      © 2025 Crown Retail Group
-    </div>
-  </div>
+  <main class="page">
+    <section class="card">
+
+      <!-- Logo -->
+      <img src="logo.png" alt="Crown Retail Group Logo" class="logo" />
+
+      <h1>Crown Retail Group</h1>
+
+      <div class="coming">COMING SOON</div>
+      <div class="divider"></div>
+
+      <p>
+        We are a growing business, committed to quality, value, and exceptional customer experience.
+      </p>
+
+      <footer>
+        © 2025 Crown Retail Group. All rights reserved.
+      </footer>
+
+    </section>
+  </main>
 </body>
 </html>
